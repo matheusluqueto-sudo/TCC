@@ -1,0 +1,1115 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   HTML / BODY
+======================================== */
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+
+    background: #f7f5e8;
+
+    color: #222;
+}
+
+
+/* ========================================
+   CONTAINER LOGIN / CADASTRO
+======================================== */
+
+.container-login {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 75% 20%,
+            rgba(113, 55, 168, 0.08),
+            transparent 35%
+        ),
+        #f7f5e8;
+}
+
+
+/* ========================================
+   LADO ESQUERDO - LOGO
+======================================== */
+
+.img-box {
+    position: relative;
+
+    width: 50%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #26063b 0%,
+            #4b0b70 45%,
+            #6d1da0 100%
+        );
+
+    box-shadow:
+        10px 0 40px rgba(39, 7, 62, 0.18);
+}
+
+
+/* brilho superior */
+
+.img-box::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: rgba(181, 71, 255, 0.15);
+
+    filter: blur(90px);
+
+    top: -180px;
+    left: -120px;
+
+    pointer-events: none;
+}
+
+
+/* brilho inferior */
+
+.img-box::after {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 193, 7, 0.08);
+
+    filter: blur(100px);
+
+    bottom: -200px;
+    right: -150px;
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   IMAGEM DA LOGO
+======================================== */
+
+.img-box img {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.6s ease;
+}
+
+.img-box:hover img {
+    transform: scale(1.015);
+}
+
+
+/* ========================================
+   LADO DIREITO
+======================================== */
+
+.content-box {
+    position: relative;
+
+    width: 50%;
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(113, 55, 168, 0.07),
+            transparent 45%
+        ),
+        #f7f5e8;
+}
+
+
+/* ========================================
+   CARD DO FORMULÁRIO
+======================================== */
+
+.form-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 600px;
+
+    padding: 52px 55px;
+
+    border: 1px solid rgba(113, 55, 168, 0.14);
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    box-shadow:
+        0 25px 60px rgba(55, 24, 75, 0.10),
+        0 5px 20px rgba(0, 0, 0, 0.04);
+
+    backdrop-filter: blur(14px);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.form-box:hover {
+    box-shadow:
+        0 30px 70px rgba(55, 24, 75, 0.13),
+        0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+
+/* ========================================
+   CADASTRO
+======================================== */
+
+.cadastro-form {
+    max-width: 650px;
+
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+
+/* ========================================
+   TÍTULO
+======================================== */
+
+.titulo-login {
+    width: 100%;
+
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.titulo-login h1 {
+    margin-bottom: 10px;
+
+    font-size: clamp(28px, 3vw, 38px);
+
+    line-height: 1.15;
+
+    font-weight: 800;
+
+    letter-spacing: -0.8px;
+
+    color: #202020;
+}
+
+.titulo-login p {
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    font-weight: 600;
+
+    letter-spacing: 0.8px;
+
+    color: #7137a8;
+}
+
+
+/* ========================================
+   FORMULÁRIO
+======================================== */
+
+form {
+    width: 100%;
+}
+
+
+/* ========================================
+   CAMPOS
+======================================== */
+
+.input-box {
+    width: 100%;
+
+    margin-bottom: 20px;
+}
+
+.input-box span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #303030;
+}
+
+
+/* ========================================
+   INPUTS E SELECT
+======================================== */
+
+.input-box input[type="text"],
+.input-box input[type="email"],
+.input-box input[type="password"],
+.input-box select {
+    width: 100%;
+
+    height: 52px;
+
+    padding: 0 17px;
+
+    border: 1px solid #dedde5;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #292929;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.04);
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* ========================================
+   PLACEHOLDER
+======================================== */
+
+.input-box input::placeholder {
+    color: #a4a9b4;
+
+    opacity: 1;
+}
+
+
+/* ========================================
+   SELECT
+======================================== */
+
+.input-box select {
+    cursor: pointer;
+
+    appearance: auto;
+}
+
+
+/* ========================================
+   FOCO
+======================================== */
+
+.input-box input[type="text"]:focus,
+.input-box input[type="email"]:focus,
+.input-box input[type="password"]:focus,
+.input-box select:focus {
+    border-color: #7137a8;
+
+    box-shadow:
+        0 0 0 3px rgba(113, 55, 168, 0.12),
+        0 6px 18px rgba(113, 55, 168, 0.08);
+
+    transform: translateY(-1px);
+}
+
+
+/* ========================================
+   LEMBRAR / ESQUECI SENHA
+======================================== */
+
+.remember {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: -2px;
+
+    margin-bottom: 25px;
+
+    font-size: 13px;
+}
+
+.remember label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #444;
+
+    cursor: pointer;
+}
+
+.remember input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+
+    accent-color: #7137a8;
+
+    cursor: pointer;
+}
+
+.remember a {
+    color: #7137a8;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: color 0.25s ease;
+}
+
+.remember a:hover {
+    color: #4f1f77;
+
+    text-decoration: underline;
+}
+
+
+/* ========================================
+   BOTÃO
+======================================== */
+
+.input-box input[type="submit"] {
+    position: relative;
+
+    width: 100%;
+
+    height: 52px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7137a8 0%,
+            #843fc0 50%,
+            #632a94 100%
+        );
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 18px rgba(113, 55, 168, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+
+/* ========================================
+   HOVER BOTÃO
+======================================== */
+
+.input-box input[type="submit"]:hover {
+    transform: translateY(-3px);
+
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 12px 26px rgba(113, 55, 168, 0.35);
+}
+
+
+/* ========================================
+   CLIQUE BOTÃO
+======================================== */
+
+.input-box input[type="submit"]:active {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 15px rgba(113, 55, 168, 0.25);
+}
+
+
+/* ========================================
+   MENSAGEM DE ERRO
+======================================== */
+
+.mensagem-erro {
+    width: 100%;
+
+    margin-bottom: 22px;
+
+    padding: 13px 16px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #8b1e1e;
+
+    background: #fff0f0;
+
+    border: 1px solid #f3caca;
+
+    box-shadow:
+        0 5px 15px rgba(150, 30, 30, 0.06);
+}
+
+
+/* ========================================
+   CADASTRO - LINK PARA LOGIN
+======================================== */
+
+.input-box.cadastro {
+    margin-top: 18px;
+
+    margin-bottom: 0;
+
+    text-align: center;
+}
+
+.input-box.cadastro p {
+    font-size: 13px;
+
+    color: #555;
+}
+
+.input-box.cadastro a {
+    color: #7137a8;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: color 0.25s ease;
+}
+
+.input-box.cadastro a:hover {
+    color: #4f1f77;
+
+    text-decoration: underline;
+}
+
+
+/* ========================================
+   FOCO / ACESSIBILIDADE
+======================================== */
+
+.input-box input[type="submit"]:focus-visible,
+.input-box input:focus-visible,
+.input-box select:focus-visible,
+.remember a:focus-visible {
+    outline: 3px solid rgba(113, 55, 168, 0.22);
+
+    outline-offset: 3px;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1100px) {
+
+    .img-box {
+        width: 45%;
+    }
+
+    .content-box {
+        width: 55%;
+
+        padding: 40px;
+    }
+
+    .form-box {
+        padding: 45px 40px;
+    }
+}
+
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 900px) {
+
+    .container-login {
+        flex-direction: column;
+
+        min-height: 100vh;
+
+        overflow-y: auto;
+    }
+
+
+    /* ====================================
+       LOGO
+    ==================================== */
+
+    .img-box {
+        width: 100%;
+
+        height: 330px;
+        min-height: 330px;
+
+        box-shadow:
+            0 10px 35px rgba(39, 7, 62, 0.15);
+    }
+
+
+    /* ====================================
+       CONTEÚDO
+    ==================================== */
+
+    .content-box {
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 60px 30px;
+    }
+
+
+    .form-box {
+        max-width: 560px;
+    }
+
+
+    .cadastro-form {
+        max-width: 600px;
+    }
+}
+
+
+/* ========================================
+   CELULAR
+======================================== */
+
+@media (max-width: 600px) {
+
+    .img-box {
+        height: 260px;
+
+        min-height: 260px;
+    }
+
+
+    .content-box {
+        padding: 40px 18px;
+    }
+
+
+    .form-box {
+        padding: 35px 22px;
+
+        border-radius: 16px;
+    }
+
+
+    .cadastro-form {
+        padding: 32px 20px;
+    }
+
+
+    /* ====================================
+       TÍTULO
+    ==================================== */
+
+    .titulo-login {
+        margin-bottom: 28px;
+    }
+
+    .titulo-login h1 {
+        font-size: 27px;
+
+        letter-spacing: -0.5px;
+    }
+
+    .titulo-login p {
+        font-size: 12px;
+
+        letter-spacing: 0.5px;
+    }
+
+
+    /* ====================================
+       CAMPOS
+    ==================================== */
+
+    .input-box {
+        margin-bottom: 17px;
+    }
+
+    .input-box span {
+        font-size: 13px;
+
+        margin-bottom: 7px;
+    }
+
+
+    .input-box input[type="text"],
+    .input-box input[type="email"],
+    .input-box input[type="password"],
+    .input-box select {
+        height: 49px;
+
+        padding: 0 14px;
+
+        font-size: 13px;
+    }
+
+
+    /* ====================================
+       BOTÃO
+    ==================================== */
+
+    .input-box input[type="submit"] {
+        height: 50px;
+
+        font-size: 14px;
+    }
+
+
+    /* ====================================
+       LEMBRAR
+    ==================================== */
+
+    .remember {
+        font-size: 12px;
+
+        margin-bottom: 22px;
+    }
+
+
+    /* ====================================
+       CADASTRO
+    ==================================== */
+
+    .input-box.cadastro p {
+        font-size: 12px;
+    }
+}
+
+
+/* ========================================
+   CELULAR PEQUENO
+======================================== */
+
+@media (max-width: 380px) {
+
+    .img-box {
+        height: 220px;
+
+        min-height: 220px;
+    }
+
+
+    .content-box {
+        padding: 30px 14px;
+    }
+
+
+    .form-box {
+        padding: 30px 17px;
+    }
+
+
+    .titulo-login h1 {
+        font-size: 24px;
+    }
+
+
+    .titulo-login p {
+        font-size: 11px;
+    }
+}
+
+
+/* ========================================
+   REDUÇÃO DE MOVIMENTO
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+}
+/* ========================================
+   TELA DE CONFIRMAÇÃO DE CÓDIGO
+======================================== */
+
+.codigo-form {
+    max-width: 600px;
+
+    padding: 42px 50px;
+}
+
+
+/* ========================================
+   IMAGEM DE CONFIRMAÇÃO
+======================================== */
+
+.codigo-imagem {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.codigo-imagem img {
+    width: 130px;
+    height: 130px;
+
+    object-fit: contain;
+
+    transition: transform 0.3s ease;
+}
+
+.codigo-imagem img:hover {
+    transform: scale(1.05);
+}
+
+
+/* ========================================
+   TÍTULO
+======================================== */
+
+.codigo-titulo {
+    margin-bottom: 28px;
+}
+
+.codigo-titulo h1 {
+    font-size: 30px;
+}
+
+.codigo-titulo p {
+    max-width: 430px;
+
+    margin: 0 auto;
+
+    line-height: 1.6;
+
+    color: #777;
+
+    font-weight: 500;
+
+    letter-spacing: 0;
+}
+
+
+/* ========================================
+   CAMPOS DO CÓDIGO
+======================================== */
+
+.codigo-container {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 10px 0 24px;
+}
+
+.codigo-container input {
+    width: 55px;
+    height: 58px;
+
+    border: 1px solid #dedde5;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #7137a8;
+
+    text-align: center;
+
+    font-family: inherit;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    outline: none;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.04);
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* ========================================
+   FOCO NOS CAMPOS
+======================================== */
+
+.codigo-container input:focus {
+    border-color: #7137a8;
+
+    box-shadow:
+        0 0 0 3px rgba(113, 55, 168, 0.12),
+        0 7px 18px rgba(113, 55, 168, 0.10);
+
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   REENVIAR CÓDIGO
+======================================== */
+
+.reenviar-codigo {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+    margin-bottom: 25px;
+
+    font-size: 13px;
+
+    color: #666;
+}
+
+.reenviar-codigo a {
+    color: #7137a8;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: color 0.25s ease;
+}
+
+.reenviar-codigo a:hover {
+    color: #4f1f77;
+
+    text-decoration: underline;
+}
+
+
+/* ========================================
+   BOTÃO
+======================================== */
+
+.codigo-botao {
+    margin-bottom: 18px;
+}
+
+.codigo-botao input[type="submit"] {
+    width: 100%;
+
+    height: 52px;
+}
+
+
+/* ========================================
+   VOLTAR
+======================================== */
+
+.voltar-codigo {
+    width: 100%;
+
+    text-align: center;
+
+    margin-top: 8px;
+}
+
+.voltar-codigo a {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #666;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.voltar-codigo a:hover {
+    color: #7137a8;
+
+    transform: translateX(-2px);
+}
+
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .codigo-form {
+        padding: 35px 20px;
+    }
+
+
+    .codigo-imagem img {
+        width: 105px;
+        height: 105px;
+    }
+
+
+    .codigo-titulo {
+        margin-bottom: 25px;
+    }
+
+
+    .codigo-titulo h1 {
+        font-size: 25px;
+    }
+
+
+    .codigo-titulo p {
+        font-size: 12px;
+    }
+
+
+    .codigo-container {
+        gap: 7px;
+
+        margin-bottom: 22px;
+    }
+
+
+    .codigo-container input {
+        width: 45px;
+        height: 50px;
+
+        font-size: 19px;
+    }
+
+
+    .reenviar-codigo {
+        font-size: 12px;
+    }
+}
+
+
+/* ========================================
+   CELULAR PEQUENO
+======================================== */
+
+@media (max-width: 380px) {
+
+    .codigo-form {
+        padding: 30px 15px;
+    }
+
+
+    .codigo-container {
+        gap: 5px;
+    }
+
+
+    .codigo-container input {
+        width: 40px;
+        height: 46px;
+
+        font-size: 17px;
+    }
+}
