@@ -1,1115 +1,522 @@
-/* ========================================
-   RESET
-======================================== */
+/* ============================= */
+/* TELA DE LOGIN - EPI CONTROL */
+/* ============================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-/* ========================================
-   HTML / BODY
-======================================== */
-
-html,
-body {
-    width: 100%;
-    min-height: 100%;
-}
-
-body {
-    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
-
-    background: #f7f5e8;
-
-    color: #222;
-}
-
-
-/* ========================================
-   CONTAINER LOGIN / CADASTRO
-======================================== */
-
-.container-login {
-    width: 100%;
-    min-height: 100vh;
-
-    display: flex;
-
-    overflow: hidden;
-
+.pagina-login{
+    width:100%;
+    min-height:100vh;
+    margin:0;
+    padding:0;
+    font-family:"Poppins","Segoe UI",Arial,sans-serif;
+    color:#25202b;
     background:
-        radial-gradient(
-            circle at 75% 20%,
-            rgba(113, 55, 168, 0.08),
-            transparent 35%
-        ),
-        #f7f5e8;
+        radial-gradient(circle at 10% 15%,rgba(255,255,255,.12),transparent 25%),
+        radial-gradient(circle at 90% 85%,rgba(112,21,168,.35),transparent 30%),
+        linear-gradient(135deg,#7015A8 0%,#6613a0 45%,#3f35a5 100%);
 }
 
-
-/* ========================================
-   LADO ESQUERDO - LOGO
-======================================== */
-
-.img-box {
-    position: relative;
-
-    width: 50%;
-    height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    overflow: hidden;
-
+.pagina-login .container-login.tela-login{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:50px 20px;
+    box-sizing:border-box;
     background:
-        linear-gradient(
-            135deg,
-            #26063b 0%,
-            #4b0b70 45%,
-            #6d1da0 100%
-        );
-
-    box-shadow:
-        10px 0 40px rgba(39, 7, 62, 0.18);
+        radial-gradient(circle at 15% 10%,rgba(255,255,255,.10),transparent 25%),
+        radial-gradient(circle at 90% 90%,rgba(64,40,180,.28),transparent 30%);
 }
 
-
-/* brilho superior */
-
-.img-box::before {
-    content: "";
-
-    position: absolute;
-
-    width: 500px;
-    height: 500px;
-
-    border-radius: 50%;
-
-    background: rgba(181, 71, 255, 0.15);
-
-    filter: blur(90px);
-
-    top: -180px;
-    left: -120px;
-
-    pointer-events: none;
+.pagina-login .login-conteudo{
+    width:100%;
+    max-width:630px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
-
-/* brilho inferior */
-
-.img-box::after {
-    content: "";
-
-    position: absolute;
-
-    width: 450px;
-    height: 450px;
-
-    border-radius: 50%;
-
-    background: rgba(255, 193, 7, 0.08);
-
-    filter: blur(100px);
-
-    bottom: -200px;
-    right: -150px;
-
-    pointer-events: none;
+.pagina-login .login-logo{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:18px;
 }
 
-
-/* ========================================
-   IMAGEM DA LOGO
-======================================== */
-
-.img-box img {
-    position: relative;
-
-    z-index: 2;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center;
-
-    transition: transform 0.6s ease;
+.pagina-login .login-logo img{
+    width:300px;
+    max-width:80%;
+    height:auto;
+    display:block;
 }
 
-.img-box:hover img {
-    transform: scale(1.015);
+.pagina-login .titulo-login{
+    width:100%;
+    text-align:center;
+    margin-bottom:28px;
 }
 
-
-/* ========================================
-   LADO DIREITO
-======================================== */
-
-.content-box {
-    position: relative;
-
-    width: 50%;
-    min-height: 100vh;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    padding: 50px;
-
-    background:
-        radial-gradient(
-            circle at 50% 35%,
-            rgba(113, 55, 168, 0.07),
-            transparent 45%
-        ),
-        #f7f5e8;
+.pagina-login .titulo-login h1{
+    margin:0 0 7px;
+    font-family:"Poppins","Segoe UI",Arial,sans-serif;
+    font-size:32px;
+    line-height:1.2;
+    font-weight:800;
+    letter-spacing:-.7px;
+    color:#fff;
 }
 
-
-/* ========================================
-   CARD DO FORMULÁRIO
-======================================== */
-
-.form-box {
-    position: relative;
-
-    width: 100%;
-    max-width: 600px;
-
-    padding: 52px 55px;
-
-    border: 1px solid rgba(113, 55, 168, 0.14);
-
-    border-radius: 20px;
-
-    background: rgba(255, 255, 255, 0.72);
-
-    box-shadow:
-        0 25px 60px rgba(55, 24, 75, 0.10),
-        0 5px 20px rgba(0, 0, 0, 0.04);
-
-    backdrop-filter: blur(14px);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+.pagina-login .titulo-login p{
+    margin:0;
+    font-family:"Poppins","Segoe UI",Arial,sans-serif;
+    font-size:14px;
+    line-height:1.5;
+    font-weight:400;
+    color:rgba(255,255,255,.88);
 }
 
-.form-box:hover {
-    box-shadow:
-        0 30px 70px rgba(55, 24, 75, 0.13),
-        0 5px 20px rgba(0, 0, 0, 0.05);
+.pagina-login .titulo-login a{
+    color:#fff;
+    font-weight:600;
+    text-decoration:underline;
+    text-underline-offset:3px;
+    transition:.2s ease;
 }
 
-
-/* ========================================
-   CADASTRO
-======================================== */
-
-.cadastro-form {
-    max-width: 650px;
-
-    padding-top: 45px;
-    padding-bottom: 45px;
+.pagina-login .titulo-login a:hover{
+    color:#ffe55c;
 }
 
-
-/* ========================================
-   TÍTULO
-======================================== */
-
-.titulo-login {
-    width: 100%;
-
-    text-align: center;
-
-    margin-bottom: 35px;
+.pagina-login .form-box{
+    width:100%;
+    max-width:630px;
+    background:#fff;
+    padding:42px 55px;
+    border-radius:17px;
+    border:1px solid rgba(255,255,255,.45);
+    box-shadow:0 20px 55px rgba(35,8,55,.25);
+    box-sizing:border-box;
 }
 
-.titulo-login h1 {
-    margin-bottom: 10px;
-
-    font-size: clamp(28px, 3vw, 38px);
-
-    line-height: 1.15;
-
-    font-weight: 800;
-
-    letter-spacing: -0.8px;
-
-    color: #202020;
+.pagina-login .input-box{
+    width:100%;
+    margin-bottom:20px;
 }
 
-.titulo-login p {
-    font-size: 14px;
-
-    line-height: 1.5;
-
-    font-weight: 600;
-
-    letter-spacing: 0.8px;
-
-    color: #7137a8;
+.pagina-login .input-box span{
+    display:block;
+    margin:0 0 8px;
+    color:#35283d;
+    font-family:"Poppins","Segoe UI",Arial,sans-serif;
+    font-size:14px;
+    font-weight:600;
 }
 
-
-/* ========================================
-   FORMULÁRIO
-======================================== */
-
-form {
-    width: 100%;
+.pagina-login .input-box span::first-letter{
+    color:#7015A8;
 }
 
-
-/* ========================================
-   CAMPOS
-======================================== */
-
-.input-box {
-    width: 100%;
-
-    margin-bottom: 20px;
+.pagina-login .input-box input[type="email"],
+.pagina-login .input-box input[type="password"]{
+    width:100%;
+    height:53px;
+    padding:0 16px;
+    border:1px solid #dedbe2;
+    border-radius:10px;
+    outline:none;
+    background:#fff;
+    color:#29222f;
+    font-family:"Poppins","Segoe UI",Arial,sans-serif;
+    font-size:14px;
+    font-weight:400;
+    box-sizing:border-box;
+    transition:.25s ease;
 }
 
-.input-box span {
-    display: block;
-
-    margin-bottom: 8px;
-
-    font-size: 14px;
-
-    font-weight: 600;
-
-    color: #303030;
+.pagina-login .input-box input[type="email"]::placeholder,
+.pagina-login .input-box input[type="password"]::placeholder{
+    color:#aaa5af;
 }
 
-
-/* ========================================
-   INPUTS E SELECT
-======================================== */
-
-.input-box input[type="text"],
-.input-box input[type="email"],
-.input-box input[type="password"],
-.input-box select {
-    width: 100%;
-
-    height: 52px;
-
-    padding: 0 17px;
-
-    border: 1px solid #dedde5;
-
-    border-radius: 10px;
-
-    outline: none;
-
-    background: #ffffff;
-
-    color: #292929;
-
-    font-family: inherit;
-
-    font-size: 14px;
-
-    box-shadow:
-        0 4px 12px rgba(0, 0, 0, 0.04);
-
-    transition:
-        border-color 0.25s ease,
-        box-shadow 0.25s ease,
-        transform 0.25s ease;
+.pagina-login .input-box input[type="email"]:focus,
+.pagina-login .input-box input[type="password"]:focus{
+    border-color:#7015A8;
+    box-shadow:0 0 0 3px rgba(112,21,168,.10);
+    transform:translateY(-1px);
 }
 
-
-/* ========================================
-   PLACEHOLDER
-======================================== */
-
-.input-box input::placeholder {
-    color: #a4a9b4;
-
-    opacity: 1;
+.pagina-login .remember{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    margin-top:-5px;
+    margin-bottom:24px;
 }
 
-
-/* ========================================
-   SELECT
-======================================== */
-
-.input-box select {
-    cursor: pointer;
-
-    appearance: auto;
+.pagina-login .remember a{
+    color:#7015A8;
+    font-family:"Poppins","Segoe UI",Arial,sans-serif;
+    font-size:13px;
+    font-weight:600;
+    text-decoration:none;
+    transition:.2s ease;
 }
 
-
-/* ========================================
-   FOCO
-======================================== */
-
-.input-box input[type="text"]:focus,
-.input-box input[type="email"]:focus,
-.input-box input[type="password"]:focus,
-.input-box select:focus {
-    border-color: #7137a8;
-
-    box-shadow:
-        0 0 0 3px rgba(113, 55, 168, 0.12),
-        0 6px 18px rgba(113, 55, 168, 0.08);
-
-    transform: translateY(-1px);
+.pagina-login .remember a:hover{
+    color:#591080;
+    text-decoration:underline;
+    text-underline-offset:3px;
 }
 
-
-/* ========================================
-   LEMBRAR / ESQUECI SENHA
-======================================== */
-
-.remember {
-    width: 100%;
-
-    display: flex;
-
-    justify-content: space-between;
-    align-items: center;
-
-    margin-top: -2px;
-
-    margin-bottom: 25px;
-
-    font-size: 13px;
+.pagina-login .input-box input[type="submit"]{
+    width:100%;
+    height:53px;
+    border:0;
+    border-radius:10px;
+    background:linear-gradient(135deg,#7015A8 0%,#843fc0 50%,#591080 100%);
+    color:#fff;
+    font-family:"Poppins","Segoe UI",Arial,sans-serif;
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:.2px;
+    cursor:pointer;
+    box-shadow:0 9px 22px rgba(112,21,168,.28);
+    transition:.25s ease;
 }
 
-.remember label {
-    display: flex;
-
-    align-items: center;
-
-    gap: 7px;
-
-    color: #444;
-
-    cursor: pointer;
+.pagina-login .input-box input[type="submit"]:hover{
+    transform:translateY(-2px);
+    filter:brightness(1.08);
+    box-shadow:0 13px 28px rgba(112,21,168,.38);
 }
 
-.remember input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-
-    accent-color: #7137a8;
-
-    cursor: pointer;
+.pagina-login .input-box input[type="submit"]:active{
+    transform:translateY(0);
 }
 
-.remember a {
-    color: #7137a8;
-
-    font-weight: 600;
-
-    text-decoration: none;
-
-    transition: color 0.25s ease;
+.pagina-login .mensagem-erro{
+    width:100%;
+    margin-bottom:20px;
+    padding:13px 16px;
+    border-radius:10px;
+    text-align:center;
+    box-sizing:border-box;
+    font-family:"Poppins","Segoe UI",Arial,sans-serif;
+    font-size:13px;
+    font-weight:600;
+    color:#8b1e1e;
+    background:#fff0f0;
+    border:1px solid #f1caca;
 }
 
-.remember a:hover {
-    color: #4f1f77;
+/* ============================= */
+/* RESPONSIVO */
+/* ============================= */
 
-    text-decoration: underline;
-}
+@media(max-width:700px){
 
-
-/* ========================================
-   BOTÃO
-======================================== */
-
-.input-box input[type="submit"] {
-    position: relative;
-
-    width: 100%;
-
-    height: 52px;
-
-    border: none;
-
-    border-radius: 10px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #7137a8 0%,
-            #843fc0 50%,
-            #632a94 100%
-        );
-
-    color: #ffffff;
-
-    font-family: inherit;
-
-    font-size: 15px;
-
-    font-weight: 700;
-
-    letter-spacing: 0.2px;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 8px 18px rgba(113, 55, 168, 0.25);
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        filter 0.25s ease;
-}
-
-
-/* ========================================
-   HOVER BOTÃO
-======================================== */
-
-.input-box input[type="submit"]:hover {
-    transform: translateY(-3px);
-
-    filter: brightness(1.08);
-
-    box-shadow:
-        0 12px 26px rgba(113, 55, 168, 0.35);
-}
-
-
-/* ========================================
-   CLIQUE BOTÃO
-======================================== */
-
-.input-box input[type="submit"]:active {
-    transform: translateY(-1px);
-
-    box-shadow:
-        0 6px 15px rgba(113, 55, 168, 0.25);
-}
-
-
-/* ========================================
-   MENSAGEM DE ERRO
-======================================== */
-
-.mensagem-erro {
-    width: 100%;
-
-    margin-bottom: 22px;
-
-    padding: 13px 16px;
-
-    border-radius: 10px;
-
-    text-align: center;
-
-    font-size: 13px;
-
-    font-weight: 600;
-
-    color: #8b1e1e;
-
-    background: #fff0f0;
-
-    border: 1px solid #f3caca;
-
-    box-shadow:
-        0 5px 15px rgba(150, 30, 30, 0.06);
-}
-
-
-/* ========================================
-   CADASTRO - LINK PARA LOGIN
-======================================== */
-
-.input-box.cadastro {
-    margin-top: 18px;
-
-    margin-bottom: 0;
-
-    text-align: center;
-}
-
-.input-box.cadastro p {
-    font-size: 13px;
-
-    color: #555;
-}
-
-.input-box.cadastro a {
-    color: #7137a8;
-
-    font-weight: 700;
-
-    text-decoration: none;
-
-    transition: color 0.25s ease;
-}
-
-.input-box.cadastro a:hover {
-    color: #4f1f77;
-
-    text-decoration: underline;
-}
-
-
-/* ========================================
-   FOCO / ACESSIBILIDADE
-======================================== */
-
-.input-box input[type="submit"]:focus-visible,
-.input-box input:focus-visible,
-.input-box select:focus-visible,
-.remember a:focus-visible {
-    outline: 3px solid rgba(113, 55, 168, 0.22);
-
-    outline-offset: 3px;
-}
-
-
-/* ========================================
-   TABLET
-======================================== */
-
-@media (max-width: 1100px) {
-
-    .img-box {
-        width: 45%;
+    .pagina-login .container-login.tela-login{
+        padding:40px 20px;
     }
 
-    .content-box {
-        width: 55%;
-
-        padding: 40px;
+    .pagina-login .login-logo img{
+        width:250px;
     }
 
-    .form-box {
-        padding: 45px 40px;
+    .pagina-login .titulo-login h1{
+        font-size:28px;
+    }
+
+    .pagina-login .form-box{
+        padding:35px 30px;
     }
 }
 
+@media(max-width:500px){
 
-/* ========================================
-   RESPONSIVIDADE
-======================================== */
-
-@media (max-width: 900px) {
-
-    .container-login {
-        flex-direction: column;
-
-        min-height: 100vh;
-
-        overflow-y: auto;
+    .pagina-login .container-login.tela-login{
+        padding:30px 15px;
     }
 
-
-    /* ====================================
-       LOGO
-    ==================================== */
-
-    .img-box {
-        width: 100%;
-
-        height: 330px;
-        min-height: 330px;
-
-        box-shadow:
-            0 10px 35px rgba(39, 7, 62, 0.15);
+    .pagina-login .login-logo{
+        margin-bottom:14px;
     }
 
-
-    /* ====================================
-       CONTEÚDO
-    ==================================== */
-
-    .content-box {
-        width: 100%;
-
-        min-height: auto;
-
-        padding: 60px 30px;
+    .pagina-login .login-logo img{
+        width:220px;
     }
 
-
-    .form-box {
-        max-width: 560px;
+    .pagina-login .titulo-login{
+        margin-bottom:22px;
     }
 
+    .pagina-login .titulo-login h1{
+        font-size:25px;
+    }
 
-    .cadastro-form {
-        max-width: 600px;
+    .pagina-login .titulo-login p{
+        font-size:13px;
+    }
+
+    .pagina-login .form-box{
+        padding:30px 22px;
+        border-radius:14px;
+    }
+
+    .pagina-login .input-box input[type="email"],
+    .pagina-login .input-box input[type="password"],
+    .pagina-login .input-box input[type="submit"]{
+        height:50px;
     }
 }
 
+@media(max-width:380px){
 
-/* ========================================
-   CELULAR
-======================================== */
-
-@media (max-width: 600px) {
-
-    .img-box {
-        height: 260px;
-
-        min-height: 260px;
+    .pagina-login .login-logo img{
+        width:200px;
     }
 
-
-    .content-box {
-        padding: 40px 18px;
+    .pagina-login .titulo-login h1{
+        font-size:23px;
     }
 
-
-    .form-box {
-        padding: 35px 22px;
-
-        border-radius: 16px;
-    }
-
-
-    .cadastro-form {
-        padding: 32px 20px;
-    }
-
-
-    /* ====================================
-       TÍTULO
-    ==================================== */
-
-    .titulo-login {
-        margin-bottom: 28px;
-    }
-
-    .titulo-login h1 {
-        font-size: 27px;
-
-        letter-spacing: -0.5px;
-    }
-
-    .titulo-login p {
-        font-size: 12px;
-
-        letter-spacing: 0.5px;
-    }
-
-
-    /* ====================================
-       CAMPOS
-    ==================================== */
-
-    .input-box {
-        margin-bottom: 17px;
-    }
-
-    .input-box span {
-        font-size: 13px;
-
-        margin-bottom: 7px;
-    }
-
-
-    .input-box input[type="text"],
-    .input-box input[type="email"],
-    .input-box input[type="password"],
-    .input-box select {
-        height: 49px;
-
-        padding: 0 14px;
-
-        font-size: 13px;
-    }
-
-
-    /* ====================================
-       BOTÃO
-    ==================================== */
-
-    .input-box input[type="submit"] {
-        height: 50px;
-
-        font-size: 14px;
-    }
-
-
-    /* ====================================
-       LEMBRAR
-    ==================================== */
-
-    .remember {
-        font-size: 12px;
-
-        margin-bottom: 22px;
-    }
-
-
-    /* ====================================
-       CADASTRO
-    ==================================== */
-
-    .input-box.cadastro p {
-        font-size: 12px;
+    .pagina-login .form-box{
+        padding:25px 18px;
     }
 }
+/* ========================= */
+/* CAMPO DE SENHA */
+/* ========================= */
 
-
-/* ========================================
-   CELULAR PEQUENO
-======================================== */
-
-@media (max-width: 380px) {
-
-    .img-box {
-        height: 220px;
-
-        min-height: 220px;
-    }
-
-
-    .content-box {
-        padding: 30px 14px;
-    }
-
-
-    .form-box {
-        padding: 30px 17px;
-    }
-
-
-    .titulo-login h1 {
-        font-size: 24px;
-    }
-
-
-    .titulo-login p {
-        font-size: 11px;
-    }
+.pagina-login .senha-box{
+    width:100%;
 }
 
-
-/* ========================================
-   REDUÇÃO DE MOVIMENTO
-======================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-
-        animation-iteration-count: 1 !important;
-
-        transition-duration: 0.01ms !important;
-    }
-}
-/* ========================================
-   TELA DE CONFIRMAÇÃO DE CÓDIGO
-======================================== */
-
-.codigo-form {
-    max-width: 600px;
-
-    padding: 42px 50px;
+.pagina-login .campo-senha{
+    width:100%;
+    height:53px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    box-sizing:border-box;
 }
 
-
-/* ========================================
-   IMAGEM DE CONFIRMAÇÃO
-======================================== */
-
-.codigo-imagem {
-    width: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin-bottom: 15px;
+.pagina-login .campo-senha input{
+    width:100% !important;
+    height:53px !important;
+    padding:0 50px 0 16px !important;
+    margin:0 !important;
+    border:1px solid #dedbe2 !important;
+    border-radius:10px !important;
+    outline:none !important;
+    background:#fff !important;
+    color:#29222f !important;
+    font-family:"Poppins","Segoe UI",Arial,sans-serif !important;
+    font-size:14px !important;
+    box-sizing:border-box !important;
+    transition:.25s ease;
 }
 
-.codigo-imagem img {
-    width: 130px;
-    height: 130px;
-
-    object-fit: contain;
-
-    transition: transform 0.3s ease;
+.pagina-login .campo-senha input::placeholder{
+    color:#aaa5af;
 }
 
-.codigo-imagem img:hover {
-    transform: scale(1.05);
+.pagina-login .campo-senha input:focus{
+    border-color:#7015A8 !important;
+    box-shadow:0 0 0 3px rgba(112,21,168,.10) !important;
 }
 
-
-/* ========================================
-   TÍTULO
-======================================== */
-
-.codigo-titulo {
-    margin-bottom: 28px;
+.pagina-login .campo-senha button{
+    position:absolute;
+    right:4px;
+    top:50%;
+    transform:translateY(-50%);
+    width:43px;
+    height:43px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:0;
+    margin:0;
+    border:0;
+    outline:0;
+    background:transparent;
+    color:#99939f;
+    cursor:pointer;
+    border-radius:8px;
+    transition:.2s ease;
 }
 
-.codigo-titulo h1 {
-    font-size: 30px;
+.pagina-login .campo-senha button:hover{
+    color:#7015A8;
+    background:#f5eef9;
 }
 
-.codigo-titulo p {
-    max-width: 430px;
-
-    margin: 0 auto;
-
-    line-height: 1.6;
-
-    color: #777;
-
-    font-weight: 500;
-
-    letter-spacing: 0;
+.pagina-login .campo-senha button i{
+    font-size:16px;
+    pointer-events:none;
 }
 
-
-/* ========================================
-   CAMPOS DO CÓDIGO
-======================================== */
-
-.codigo-container {
-    width: 100%;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 12px;
-
-    margin: 10px 0 24px;
+.pagina-login .campo-senha button:active{
+    transform:translateY(-50%) scale(.94);
+}
+.pagina-login .codigo-form{
+padding-top:35px;
 }
 
-.codigo-container input {
-    width: 55px;
-    height: 58px;
-
-    border: 1px solid #dedde5;
-
-    border-radius: 10px;
-
-    background: #ffffff;
-
-    color: #7137a8;
-
-    text-align: center;
-
-    font-family: inherit;
-
-    font-size: 22px;
-
-    font-weight: 700;
-
-    outline: none;
-
-    box-shadow:
-        0 4px 12px rgba(0, 0, 0, 0.04);
-
-    transition:
-        border-color 0.25s ease,
-        box-shadow 0.25s ease,
-        transform 0.25s ease;
+.pagina-login .codigo-imagem{
+width:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+margin-bottom:18px;
 }
 
-
-/* ========================================
-   FOCO NOS CAMPOS
-======================================== */
-
-.codigo-container input:focus {
-    border-color: #7137a8;
-
-    box-shadow:
-        0 0 0 3px rgba(113, 55, 168, 0.12),
-        0 7px 18px rgba(113, 55, 168, 0.10);
-
-    transform: translateY(-2px);
+.pagina-login .codigo-imagem img{
+width:110px;
+height:110px;
+object-fit:contain;
+display:block;
 }
 
-
-/* ========================================
-   REENVIAR CÓDIGO
-======================================== */
-
-.reenviar-codigo {
-    width: 100%;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 5px;
-
-    margin-bottom: 25px;
-
-    font-size: 13px;
-
-    color: #666;
+.pagina-login .codigo-titulo{
+margin-bottom:25px;
 }
 
-.reenviar-codigo a {
-    color: #7137a8;
-
-    font-weight: 700;
-
-    text-decoration: none;
-
-    transition: color 0.25s ease;
+.pagina-login .codigo-titulo h1{
+font-size:30px;
 }
 
-.reenviar-codigo a:hover {
-    color: #4f1f77;
-
-    text-decoration: underline;
+.pagina-login .codigo-container{
+width:100%;
+display:flex;
+justify-content:center;
+gap:12px;
+margin:10px 0 22px;
 }
 
-
-/* ========================================
-   BOTÃO
-======================================== */
-
-.codigo-botao {
-    margin-bottom: 18px;
+.pagina-login .codigo-container input{
+width:58px;
+height:60px;
+padding:0;
+border:1px solid #dedbe2;
+border-radius:10px;
+outline:none;
+background:#fff;
+color:#7015A8;
+font-family:"Poppins","Segoe UI",Arial,sans-serif;
+font-size:24px;
+font-weight:700;
+text-align:center;
+box-sizing:border-box;
+transition:.25s ease;
 }
 
-.codigo-botao input[type="submit"] {
-    width: 100%;
-
-    height: 52px;
+.pagina-login .codigo-container input:focus{
+border-color:#7015A8;
+box-shadow:0 0 0 3px rgba(112,21,168,.10);
+transform:translateY(-2px);
 }
 
-
-/* ========================================
-   VOLTAR
-======================================== */
-
-.voltar-codigo {
-    width: 100%;
-
-    text-align: center;
-
-    margin-top: 8px;
+.pagina-login .reenviar-codigo{
+width:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:5px;
+margin-bottom:22px;
+font-family:"Poppins","Segoe UI",Arial,sans-serif;
+font-size:13px;
 }
 
-.voltar-codigo a {
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 7px;
-
-    color: #666;
-
-    font-size: 13px;
-
-    font-weight: 500;
-
-    text-decoration: none;
-
-    transition:
-        color 0.25s ease,
-        transform 0.25s ease;
+.pagina-login .reenviar-codigo span{
+color:#88818d;
 }
 
-.voltar-codigo a:hover {
-    color: #7137a8;
-
-    transform: translateX(-2px);
+.pagina-login .reenviar-codigo a{
+color:#7015A8;
+font-weight:600;
+text-decoration:none;
+transition:.2s ease;
 }
 
-
-/* ========================================
-   RESPONSIVIDADE
-======================================== */
-
-@media (max-width: 600px) {
-
-    .codigo-form {
-        padding: 35px 20px;
-    }
-
-
-    .codigo-imagem img {
-        width: 105px;
-        height: 105px;
-    }
-
-
-    .codigo-titulo {
-        margin-bottom: 25px;
-    }
-
-
-    .codigo-titulo h1 {
-        font-size: 25px;
-    }
-
-
-    .codigo-titulo p {
-        font-size: 12px;
-    }
-
-
-    .codigo-container {
-        gap: 7px;
-
-        margin-bottom: 22px;
-    }
-
-
-    .codigo-container input {
-        width: 45px;
-        height: 50px;
-
-        font-size: 19px;
-    }
-
-
-    .reenviar-codigo {
-        font-size: 12px;
-    }
+.pagina-login .reenviar-codigo a:hover{
+color:#591080;
+text-decoration:underline;
+text-underline-offset:3px;
 }
 
+.pagina-login .codigo-botao{
+margin-bottom:15px;
+}
 
-/* ========================================
-   CELULAR PEQUENO
-======================================== */
+.pagina-login .voltar-codigo{
+width:100%;
+display:flex;
+justify-content:center;
+}
 
-@media (max-width: 380px) {
+.pagina-login .voltar-codigo a{
+display:flex;
+align-items:center;
+gap:7px;
+color:#7015A8;
+font-family:"Poppins","Segoe UI",Arial,sans-serif;
+font-size:13px;
+font-weight:600;
+text-decoration:none;
+transition:.2s ease;
+}
 
-    .codigo-form {
-        padding: 30px 15px;
-    }
+.pagina-login .voltar-codigo a:hover{
+color:#591080;
+transform:translateX(-2px);
+}
 
+@media(max-width:700px){
+.pagina-login .codigo-container{
+gap:9px;
+}
+.pagina-login .codigo-container input{
+width:52px;
+height:56px;
+}
+}
 
-    .codigo-container {
-        gap: 5px;
-    }
+@media(max-width:500px){
+.pagina-login .codigo-form{
+padding-top:28px;
+}
+.pagina-login .codigo-imagem img{
+width:90px;
+height:90px;
+}
+.pagina-login .codigo-titulo h1{
+font-size:25px;
+}
+.pagina-login .codigo-container{
+gap:6px;
+}
+.pagina-login .codigo-container input{
+width:42px;
+height:50px;
+font-size:20px;
+border-radius:8px;
+}
+.pagina-login .reenviar-codigo{
+font-size:11px;
+}
+}
 
-
-    .codigo-container input {
-        width: 40px;
-        height: 46px;
-
-        font-size: 17px;
-    }
+@media(max-width:380px){
+.pagina-login .codigo-container{
+gap:4px;
+}
+.pagina-login .codigo-container input{
+width:38px;
+height:46px;
+font-size:18px;
+}
 }
